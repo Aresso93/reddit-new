@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./reddit-service.js"></script>
+    <script src="./header.js"></script>
+    <script src="./list.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <script>
+    const myvar = localStorage.getItem('singlePost');
+    console.log(myvar);
+    fetch(myvar, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json())
+    .then(res => console.log(res));
+
+    </script>
+</body>
+</html>
